@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LoveStory Studio | Digital Gifts</title>
+<meta name="description" content="Create a beautiful personalized digital gift for someone special.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Prompt:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg:#100e18;
+  --card:#1c1927;
+  --pink:#ed9ebc;
+  --gold:#d8bd8b;
+  --white:#fff9f8;
+  --muted:#b5aeba;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--white);
+  font-family:'Prompt',sans-serif;
+}
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:22px 7%;
+  border-bottom:1px solid #ffffff15;
+}
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:23px;
+  color:var(--pink);
+}
+nav a{
+  color:var(--white);
+  text-decoration:none;
+  margin-left:22px;
+  font-size:13px;
+}
+.hero{
+  min-height:590px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:80px 20px;
+  background:
+  radial-gradient(ellipse at 50% 35%,#69435c55,transparent 65%);
+}
+.hero-content{max-width:750px}
+.eyebrow{
+  color:var(--gold);
+  letter-spacing:4px;
+  font-size:11px;
+  margin-bottom:24px;
+}
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(42px,8vw,76px);
+  line-height:1.15;
+  margin-bottom:25px;
+}
+h1 span{color:var(--pink);font-style:italic}
+.hero p{
+  color:var(--muted);
+  font-size:15px;
+  line-height:2;
+  max-width:550px;
+  margin:0 auto 35px;
+}
+.btn{
+  display:inline-block;
+  padding:14px 30px;
+  border-radius:40px;
+  background:linear-gradient(120deg,#ed9ebc,#d8bd8b);
+  color:#241521;
+  font-weight:600;
+  text-decoration:none;
+  border:0;
+  cursor:pointer;
+  font-family:inherit;
+}
+.btn-outline{
+  background:transparent;
+  border:1px solid #ed9ebc88;
+  color:var(--pink);
+  margin-left:8px;
+}
+section{padding:75px 7%}
+.section-heading{text-align:center;margin-bottom:45px}
+.section-heading small{
+  color:var(--gold);
+  letter-spacing:3px;
+  font-size:11px;
+}
+h2{
+  font-family:'Playfair Display',serif;
+  font-size:38px;
+  margin:12px 0;
+}
+.section-heading p{color:var(--muted);font-size:13px}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  max-width:1100px;
+  margin:auto;
+}
+.card{
+  background:var(--card);
+  border:1px solid #ffffff13;
+  border-radius:18px;
+  padding:28px 22px;
+  text-align:center;
+  transition:.25s;
+}
+.card:hover{
+  transform:translateY(-6px);
+  border-color:#ed9ebc88;
+}
+.card .symbol{font-size:38px;margin-bottom:18px}
+.card h3{font-size:17px;margin-bottom:10px}
+.card p{font-size:12px;color:var(--muted);line-height:1.9}
+.card button{
+  margin-top:22px;
+  background:transparent;
+  border:1px solid var(--pink);
+  color:var(--pink);
+  padding:10px 20px;
+  border-radius:30px;
+  cursor:pointer;
+  font-family:inherit;
+}
+.how{
+  background:#181521;
+  text-align:center;
+}
+.steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:25px;
+  max-width:900px;
+  margin:40px auto 0;
+}
+.step-number{
+  color:var(--pink);
+  font-family:'Playfair Display',serif;
+  font-size:35px;
+}
+.step p{color:var(--muted);font-size:13px;margin-top:8px}
+footer{
+  padding:35px 20px;
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+  border-top:1px solid #ffffff15;
+}
+footer strong{
+  display:block;
+  color:var(--pink);
+  font-family:'Playfair Display',serif;
+  font-size:22px;
+  margin-bottom:8px;
+}
+#notice{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#000b;
+  z-index:10;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+.notice-box{
+  background:var(--card);
+  border:1px solid #ed9ebc66;
+  border-radius:20px;
+  padding:30px;
+  max-width:380px;
+  width:100%;
+  text-align:center;
+}
+.notice-box h3{color:var(--pink);margin-bottom:12px}
+.notice-box p{color:var(--muted);font-size:13px;line-height:1.8}
+.notice-box button{margin-top:20px}
+@media(max-width:600px){
+  header{padding:18px 5%}
+  nav a{margin-left:10px;font-size:11px}
+  .logo{font-size:19px}
+  .hero{min-height:540px}
+  section{padding:60px 5%}
+  h2{font-size:31px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">LoveStory Studio</div>
+  <nav>
+    <a href="#gifts">Our Gifts</a>
+    <a href="#how">How it works</a>
+  </nav>
+</header>
+
+<main>
+<div class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">A LITTLE MAGIC, A LOT OF LOVE</div>
+    <h1>Make memories<br>into <span>something magical.</span></h1>
+    <p>
+      More than a gift. A little world made just for someone special.
+      Create beautiful digital surprises filled with memories,
+      love and unforgettable moments.
+    </p>
+    <a class="btn" href="#gifts">Explore the gifts ♡</a>
+    <a class="btn btn-outline" href="#how">Discover more</a>
+  </div>
+</div>
+
+<section id="gifts">
+  <div class="section-heading">
+    <small>THE GIFT COLLECTION</small>
+    <h2>Choose Your Love Story</h2>
+    <p>Every love story deserves a special way to be remembered.</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="symbol">🧩</div>
+      <h3>Memory Puzzle</h3>
+      <p>Turn your favorite photo into a beautiful puzzle to solve.</p>
+      <button onclick="showNotice('Memory Puzzle')">Explore gift</button>
+    </div>
+
+    <div class="card">
+      <div class="symbol">💌</div>
+      <h3>Love Letters</h3>
+      <p>Open a collection of heartfelt letters and secret messages.</p>
+      <button onclick="showNotice('Love Letters')">Explore gift</button>
+    </div>
+
+    <div class="card">
+      <div class="symbol">💗</div>
+      <h3>Memory Match</h3>
+      <p>Match meaningful moments and rediscover your memories.</p>
+      <button onclick="showNotice('Memory Match')">Explore gift</button>
+    </div>
+
+    <div class="card">
+      <div class="symbol">🎁</div>
+      <h3>Surprise Box</h3>
+      <p>Unwrap a special digital gift made with love.</p>
+      <button onclick="showNotice('Surprise Box')">Explore gift</button>
+    </div>
+
+    <div class="card">
+      <div class="symbol">📖</div>
+      <h3>Our Story</h3>
+      <p>Create a beautiful interactive story of your relationship.</p>
+      <button onclick="showNotice('Our Story')">Explore gift</button>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="section-heading">
+    <small>SIMPLE & SPECIAL</small>
+    <h2>How It Works</h2>
+    <p>Your special gift is only a few steps away.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-number">01</div>
+      <h3>Choose</h3>
+      <p>Select your favorite gift experience.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">02</div>
+      <h3>Personalize</h3>
+      <p>Add names, photos and your own messages.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">03</div>
+      <h3>Create</h3>
+      <p>Prepare a unique gift for your special person.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">04</div>
+      <h3>Share</h3>
+      <p>Send your private gift link and make someone smile.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <strong>LoveStory Studio</strong>
+  Made with ♡ for your most precious memories.
+  <p style="margin-top:12px">© 2026 LoveStory Studio</p>
+</footer>
+
+<div id="notice">
+  <div class="notice-box">
+    <h3 id="noticeTitle">Coming Soon</h3>
+    <p>This beautiful gift experience is being prepared.
+    Stay tuned for something magical!</p>
+    <button class="btn" onclick="closeNotice()">Close</button>
+  </div>
+</div>
+
+<script>
+function showNotice(name){
+  document.getElementById('noticeTitle').textContent=name+' ♡';
+  document.getElementById('notice').style.display='flex';
+}
+function closeNotice(){
+  document.getElementById('notice').style.display='none';
+}
+</script>
+
+</body>
+</html>
