@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -6,654 +5,136 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#100d19">
 <title>LoveStory Studio | ของขวัญที่สร้างจากความรัก</title>
-<meta name="description" content="สร้างของขวัญดิจิทัลสุดพิเศษ เรื่องราวและความทรงจำสำหรับคนที่คุณรัก">
-
+<meta name="description" content="สร้างของขวัญดิจิทัลส่วนตัวจากรูปภาพ เรื่องราว และความทรงจำ สำหรับคนสำคัญของคุณ">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap');
-
-:root{
-  --bg:#100d19;
-  --bg2:#191423;
-  --card:#211b2c;
-  --pink:#efaac8;
-  --gold:#d9bd8b;
-  --white:#fff8fb;
-  --muted:#bdb2c4;
-  --border:#ffffff18;
-}
-
+:root{--bg:#100d19;--bg2:#191423;--card:#211b2c;--pink:#efaac8;--pink2:#f6c9dc;--gold:#d9bd8b;--white:#fff8fb;--muted:#bdb2c4;--line:#ffffff1b}
 *{box-sizing:border-box;margin:0;padding:0}
-
 html{scroll-behavior:smooth}
-
-body{
-  background:var(--bg);
-  color:var(--white);
-  font-family:'Prompt',sans-serif;
-  overflow-x:hidden;
-}
-
-a{text-decoration:none;color:inherit}
-button{font-family:inherit}
-
-header{
-  min-height:75px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:15px 7%;
-  border-bottom:1px solid var(--border);
-  background:#100d19ee;
-  position:sticky;
-  top:0;
-  z-index:5;
-  backdrop-filter:blur(15px);
-}
-
-.logo{
-  font-family:'Playfair Display',serif;
-  font-size:25px;
-  color:var(--pink);
-  letter-spacing:.5px;
-}
-
-.logo small{
-  display:block;
-  font-family:'Prompt',sans-serif;
-  color:var(--gold);
-  font-size:8px;
-  letter-spacing:4px;
-  text-align:center;
-}
-
-nav{
-  display:flex;
-  gap:26px;
-  align-items:center;
-}
-
-nav a{
-  font-size:12px;
-  color:#e8dfe9;
-  transition:.3s;
-}
-
-nav a:hover{color:var(--pink)}
-
-.menu-btn{
-  display:none;
-  background:none;
-  border:0;
-  color:white;
-  font-size:25px;
-  cursor:pointer;
-}
-
-.hero{
-  min-height:620px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:80px 20px;
-  position:relative;
-  background:
-    radial-gradient(ellipse at 50% 40%,#70435d55,transparent 65%),
-    radial-gradient(ellipse at 10% 80%,#42304e44,transparent 55%);
-}
-
-.hero-content{
-  max-width:780px;
-  position:relative;
-  z-index:1;
-}
-
-.eyebrow{
-  color:var(--gold);
-  font-size:11px;
-  letter-spacing:4px;
-  margin-bottom:25px;
-}
-
-.hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(43px,8vw,78px);
-  line-height:1.25;
-  margin-bottom:20px;
-}
-
-.hero h1 span{
-  color:var(--pink);
-  font-style:italic;
-}
-
-.hero p{
-  color:var(--muted);
-  font-size:15px;
-  line-height:2.1;
-  max-width:570px;
-  margin:0 auto 35px;
-}
-
-.btn{
-  display:inline-block;
-  padding:14px 30px;
-  border-radius:40px;
-  background:linear-gradient(120deg,#f0b2cc,#d9bd8b);
-  color:#291827;
-  font-size:13px;
-  font-weight:600;
-  border:0;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.btn:hover{transform:translateY(-3px);filter:brightness(1.08)}
-
-.btn-outline{
-  background:transparent;
-  border:1px solid #efaac8;
-  color:var(--pink);
-  margin-left:9px;
-}
-
-.hero-note{
-  margin-top:38px;
-  color:#a99bad;
-  font-size:11px;
-  letter-spacing:1px;
-}
-
-section{padding:85px 7%}
-
-.heading{
-  text-align:center;
-  margin-bottom:45px;
-}
-
-.heading small{
-  color:var(--gold);
-  font-size:11px;
-  letter-spacing:3px;
-}
-
-.heading h2{
-  font-family:'Playfair Display',serif;
-  font-size:38px;
-  margin:12px 0;
-}
-
-.heading p{
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.9;
-}
-
-.gift-section{
-  background:linear-gradient(180deg,#100d19,#171321);
-}
-
-.gift-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-  gap:20px;
-  max-width:1150px;
-  margin:auto;
-}
-
-.gift-card{
-  background:linear-gradient(145deg,#292235,#1c1827);
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:30px 22px;
-  text-align:center;
-  transition:.3s;
-  position:relative;
-  overflow:hidden;
-}
-
-.gift-card:hover{
-  transform:translateY(-7px);
-  border-color:#efaac899;
-  box-shadow:0 15px 35px #0004;
-}
-
-.gift-icon{
-  width:75px;
-  height:75px;
-  border-radius:50%;
-  background:#efaac818;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin:0 auto 20px;
-  font-size:35px;
-}
-
-.gift-card h3{
-  font-size:17px;
-  margin-bottom:12px;
-  font-weight:500;
-}
-
-.gift-card p{
-  font-size:12px;
-  color:var(--muted);
-  line-height:1.9;
-  min-height:70px;
-}
-
-.gift-card button{
-  margin-top:20px;
-  padding:10px 22px;
-  border:1px solid var(--pink);
-  border-radius:30px;
-  background:transparent;
-  color:var(--pink);
-  font-size:12px;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.gift-card button:hover{
-  background:var(--pink);
-  color:#241624;
-}
-
-.badge{
-  display:inline-block;
-  font-size:9px;
-  color:var(--gold);
-  border:1px solid #d9bd8b55;
-  border-radius:30px;
-  padding:5px 12px;
-  margin-bottom:16px;
-}
-
-.story-section{
-  text-align:center;
-  background:
-    radial-gradient(ellipse at center,#69405a33,transparent 65%),
-    #191423;
-}
-
-.story-box{
-  max-width:750px;
-  margin:auto;
-  padding:45px 25px;
-  border:1px solid #d9bd8b44;
-  border-radius:20px;
-  background:#211b2caa;
-}
-
-.story-box .heart{
-  font-size:38px;
-  margin-bottom:20px;
-}
-
-.story-box h2{
-  font-family:'Playfair Display',serif;
-  font-size:36px;
-  color:var(--pink);
-  margin-bottom:15px;
-}
-
-.story-box p{
-  color:var(--muted);
-  font-size:13px;
-  line-height:2;
-  max-width:520px;
-  margin:0 auto 25px;
-}
-
+body{background:var(--bg);color:var(--white);font-family:'Prompt',sans-serif;overflow-x:hidden}
+a{text-decoration:none;color:inherit}button{font:inherit}
+header{height:78px;display:flex;align-items:center;justify-content:space-between;padding:14px 7%;border-bottom:1px solid var(--line);background:#100d19ed;position:sticky;top:0;z-index:10;backdrop-filter:blur(16px)}
+.logo{font-family:'Playfair Display',serif;font-size:25px;color:var(--pink);letter-spacing:.3px;line-height:1.1}
+.logo small{display:block;font-family:'Prompt',sans-serif;color:var(--gold);font-size:8px;letter-spacing:4px;text-align:center;margin-top:5px}
+nav{display:flex;gap:30px;align-items:center}nav a{font-size:13px;color:#e8dfe9;transition:.25s}nav a:hover{color:var(--pink)}
+.nav-cta{border:1px solid #efaac877;border-radius:30px;padding:10px 18px;color:var(--pink)}
+.menu-btn{display:none;background:none;border:0;color:white;font-size:26px;cursor:pointer}
+.hero{min-height:650px;display:grid;place-items:center;text-align:center;padding:88px 20px 95px;position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 50% 38%,#70435d66,transparent 58%),radial-gradient(ellipse at 8% 85%,#42304e55,transparent 45%),linear-gradient(180deg,#100d19,#15101e)}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid #d9bd8b26;border-radius:50%;width:480px;height:480px;z-index:-1}
+.hero:before{top:-310px;left:-170px}.hero:after{bottom:-360px;right:-120px;width:600px;height:600px}
+.hero-content{max-width:850px;position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-size:11px;letter-spacing:2px;border:1px solid #d9bd8b55;background:#d9bd8b0d;padding:9px 17px;border-radius:30px;margin-bottom:28px}
+.hero h1{font-family:'Playfair Display','Prompt',serif;font-size:clamp(42px,7vw,76px);line-height:1.28;font-weight:600;letter-spacing:-1px;margin-bottom:20px}
+.hero h1 span{color:var(--pink);font-style:italic}
+.hero p{color:var(--muted);font-size:15px;line-height:2.05;max-width:610px;margin:0 auto 32px}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 27px;border-radius:40px;background:linear-gradient(120deg,#f2bad2,#d9bd8b);color:#291827;font-size:13px;font-weight:600;border:1px solid transparent;cursor:pointer;transition:.25s;box-shadow:0 8px 30px #efaac822}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.06)}
+.btn-outline{background:#ffffff08;border-color:#efaac899;color:var(--pink);box-shadow:none}
+.hero-note{margin-top:42px;color:#a99bad;font-size:10px;letter-spacing:2.5px}
+.trust-row{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:30px;color:#c9bdcb;font-size:11px}
+.trust-row span{display:flex;align-items:center;gap:7px}
+section{padding:84px 7%}
+.heading{text-align:center;margin:0 auto 44px;max-width:700px}
+.heading small{color:var(--gold);font-size:10px;letter-spacing:3px}
+.heading h2{font-size:clamp(27px,4vw,38px);font-weight:500;margin:11px 0;font-family:'Prompt',sans-serif}
+.heading p{color:var(--muted);font-size:13px;line-height:1.9}
+.gift-section{background:linear-gradient(180deg,#100d19,#171321)}
+.gift-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;max-width:1200px;margin:auto}
+.gift-card{background:linear-gradient(150deg,#292235,#1c1827);border:1px solid var(--line);border-radius:20px;padding:25px 17px 23px;text-align:center;transition:.3s;position:relative;overflow:hidden}
+.gift-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,#efaac81a,transparent 65%);pointer-events:none}
+.gift-card:hover{transform:translateY(-7px);border-color:#efaac899;box-shadow:0 18px 38px #0005}
+.gift-icon{width:70px;height:70px;border-radius:22px;background:linear-gradient(145deg,#efaac829,#d9bd8b12);border:1px solid #efaac833;display:grid;place-items:center;margin:0 auto 17px;font-size:31px}
+.badge{display:inline-block;font-size:9px;color:var(--gold);border:1px solid #d9bd8b55;border-radius:30px;padding:5px 10px;margin-bottom:13px;letter-spacing:.8px}
+.gift-card h3{font-size:15px;margin-bottom:10px;font-weight:500;min-height:48px;display:grid;place-items:center}
+.gift-card p{font-size:11px;color:var(--muted);line-height:1.9;min-height:82px}
+.gift-card button{margin-top:17px;padding:9px 18px;border:1px solid var(--pink);border-radius:30px;background:transparent;color:var(--pink);font-size:11px;cursor:pointer;transition:.25s}
+.gift-card button:hover{background:var(--pink);color:#241624}
+.story-section{text-align:center;background:radial-gradient(ellipse at center,#69405a33,transparent 65%),#191423}
+.story-box{max-width:790px;margin:auto;padding:52px 28px;border:1px solid #d9bd8b55;border-radius:25px;background:linear-gradient(145deg,#211b2cdd,#1a1524dd);box-shadow:0 20px 60px #0003}
+.story-box .heart{font-size:35px;color:var(--pink);margin-bottom:15px}
+.story-box h2{font-size:clamp(26px,4vw,36px);color:var(--pink);font-weight:500;margin-bottom:15px}
+.story-box p{color:var(--muted);font-size:13px;line-height:2;max-width:550px;margin:0 auto 25px}
 .how-section{background:#100d19}
-
-.steps{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:25px;
-  max-width:1000px;
-  margin:auto;
-  text-align:center;
-}
-
-.step{
-  padding:25px 15px;
-}
-
-.step-number{
-  font-family:'Playfair Display',serif;
-  font-size:40px;
-  color:var(--pink);
-  margin-bottom:15px;
-}
-
-.step h3{font-size:16px;font-weight:500;margin-bottom:10px}
-
-.step p{
-  font-size:12px;
-  color:var(--muted);
-  line-height:1.9;
-}
-
-.promise{
-  text-align:center;
-  background:#191423;
-  padding:55px 20px;
-}
-
-.promise h2{
-  font-family:'Playfair Display',serif;
-  color:var(--gold);
-  font-size:28px;
-  margin-bottom:14px;
-}
-
-.promise p{
-  font-size:12px;
-  color:var(--muted);
-  line-height:2;
-}
-
-footer{
-  text-align:center;
-  padding:40px 20px;
-  border-top:1px solid var(--border);
-  color:var(--muted);
-  font-size:11px;
-  line-height:2;
-}
-
-.footer-logo{
-  font-family:'Playfair Display',serif;
-  font-size:25px;
-  color:var(--pink);
-  margin-bottom:8px;
-}
-
-footer .copyright{
-  margin-top:15px;
-  color:#807488;
-}
-
-#modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:20;
-  background:#000b;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-
-.modal-box{
-  background:#241d30;
-  border:1px solid #efaac877;
-  border-radius:20px;
-  padding:35px 25px;
-  max-width:400px;
-  width:100%;
-  text-align:center;
-}
-
-.modal-box .modal-icon{font-size:40px;margin-bottom:15px}
-
-.modal-box h3{
-  color:var(--pink);
-  font-size:21px;
-  margin-bottom:12px;
-}
-
-.modal-box p{
-  font-size:13px;
-  color:var(--muted);
-  line-height:2;
-}
-
-.modal-box button{margin-top:22px}
-
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1050px;margin:auto}
+.step{padding:27px 18px;text-align:center;border:1px solid var(--line);border-radius:18px;background:#ffffff05}
+.step-number{font-family:'Playfair Display',serif;font-size:37px;color:var(--pink);margin-bottom:12px}
+.step h3{font-size:15px;font-weight:500;margin-bottom:9px}.step p{font-size:11px;color:var(--muted);line-height:1.9}
+.promise{text-align:center;background:#191423;padding:55px 20px}
+.promise h2{font-size:clamp(22px,3vw,29px);font-weight:500;color:var(--gold);margin-bottom:13px}
+.promise p{font-size:12px;color:var(--muted);line-height:2}
+footer{text-align:center;padding:38px 20px;border-top:1px solid var(--line);color:var(--muted);font-size:11px;line-height:2}
+.footer-logo{font-family:'Playfair Display',serif;font-size:25px;color:var(--pink);margin-bottom:8px}
+.copyright{margin-top:13px;color:#807488}
+#modal{display:none;position:fixed;inset:0;z-index:30;background:#000b;align-items:center;justify-content:center;padding:20px}
+.modal-box{background:#241d30;border:1px solid #efaac877;border-radius:22px;padding:35px 25px;max-width:410px;width:100%;text-align:center;box-shadow:0 20px 70px #0008}
+.modal-icon{font-size:40px;margin-bottom:15px}.modal-box h3{color:var(--pink);font-size:21px;margin-bottom:12px}.modal-box p{font-size:13px;color:var(--muted);line-height:2}.modal-box button{margin-top:22px}
+@media(max-width:1050px){.gift-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:650px){
-  header{padding:13px 5%}
-  .logo{font-size:21px}
-  .menu-btn{display:block}
-  nav{
-    display:none;
-    position:absolute;
-    top:72px;
-    left:0;
-    right:0;
-    background:#191423;
-    flex-direction:column;
-    padding:22px;
-    gap:20px;
-    border-bottom:1px solid var(--border);
-  }
-  nav.active{display:flex}
-  nav a{font-size:14px}
-  .hero{min-height:550px}
-  section{padding:65px 5%}
-  .heading h2{font-size:31px}
-  .hero p{font-size:13px}
-  .btn{padding:13px 20px;font-size:12px}
-  .gift-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-  .gift-card{padding:23px 12px}
-  .gift-card h3{font-size:14px}
-  .gift-card p{font-size:11px;min-height:85px}
-  .gift-card button{padding:9px 13px;font-size:11px}
-  .gift-icon{width:62px;height:62px;font-size:29px}
-  .story-box h2{font-size:29px}
+ header{height:70px;padding:12px 5%}.logo{font-size:21px}.menu-btn{display:block}
+ nav{display:none;position:absolute;top:69px;left:0;right:0;background:#191423;flex-direction:column;padding:22px;gap:20px;border-bottom:1px solid var(--line)}
+ nav.active{display:flex}nav a{font-size:14px}.hero{min-height:570px;padding:75px 20px}.hero p{font-size:13px}.hero-note{font-size:9px;letter-spacing:1.5px}
+ section{padding:65px 5%}.gift-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.gift-card{padding:22px 12px}.gift-card h3{font-size:13px;min-height:42px}.gift-card p{font-size:10px;min-height:95px}.gift-card button{padding:9px 13px;font-size:10px}.gift-icon{width:60px;height:60px;font-size:27px}.steps{grid-template-columns:repeat(2,1fr);gap:12px}.step{padding:22px 12px}.story-box{padding:38px 20px}
 }
-
-@media(max-width:360px){
-  .gift-grid{grid-template-columns:1fr}
-}
+@media(max-width:360px){.gift-grid{grid-template-columns:1fr}.gift-card p{min-height:0}}
 </style>
 </head>
-
 <body>
-
 <header>
-  <a href="#" class="logo">
-    LoveStory Studio
-    <small>MADE WITH LOVE</small>
-  </a>
-
+  <a href="#" class="logo">LoveStory Studio<small>MADE WITH LOVE</small></a>
   <button class="menu-btn" onclick="toggleMenu()" aria-label="เปิดเมนู">☰</button>
-
   <nav id="nav">
-    <a href="#">หน้าแรก</a>
-    <a href="#gifts">ของขวัญของเรา</a>
-    <a href="#how">วิธีใช้งาน</a>
+    <a href="#">หน้าแรก</a><a href="#gifts">รูปแบบของขวัญ</a><a href="#how">วิธีใช้งาน</a><a class="nav-cta" href="#gifts">เริ่มสร้างของขวัญ ♡</a>
   </nav>
 </header>
-
 <main>
-
 <div class="hero">
-  <div class="hero-content">
-    <div class="eyebrow">♡ ของขวัญที่มีเพียงชิ้นเดียวในโลก ♡</div>
-
-    <h1>
-      เปลี่ยนความทรงจำ<br>
-      ให้กลายเป็น <span>ของขวัญ</span>
-    </h1>
-
-    <p>
-      เพราะบางความรู้สึกไม่สามารถบอกได้ด้วยคำพูด
-      มาสร้างของขวัญดิจิทัลสุดพิเศษ
-      ที่เต็มไปด้วยเรื่องราว ความทรงจำ และความรัก
-      สำหรับคนสำคัญของคุณ
-    </p>
-
-    <a href="#gifts" class="btn">ค้นหาของขวัญของคุณ ♡</a>
-    <a href="#how" class="btn btn-outline">รู้จักเราเพิ่มเติม</a>
-
-    <div class="hero-note">
-      A SPECIAL GIFT FOR YOUR SPECIAL SOMEONE
-    </div>
-  </div>
+ <div class="hero-content">
+  <div class="eyebrow">♡ ของขวัญที่มีเพียงชิ้นเดียวในโลก ♡</div>
+  <h1>เปลี่ยนความทรงจำ<br>ให้กลายเป็น <span>ของขวัญ</span></h1>
+  <p>บางความรู้สึกมีค่ามากกว่าคำพูด<br>สร้างของขวัญดิจิทัลจากรูปภาพ เรื่องราว และช่วงเวลาที่มีความหมาย<br>เพื่อส่งต่อให้คนพิเศษของคุณ</p>
+  <div class="actions"><a href="#gifts" class="btn">เลือกของขวัญของคุณ ♡</a><a href="#how" class="btn btn-outline">ดูวิธีใช้งาน</a></div>
+  <div class="trust-row"><span>✦ ออกแบบได้ด้วยตัวเอง</span><span>♡ เก็บเรื่องราวของคุณ</span><span>✧ ส่งเป็นลิงก์ส่วนตัว</span></div>
+  <div class="hero-note">A LITTLE GIFT, A LIFETIME MEMORY</div>
+ </div>
 </div>
-
 <section class="gift-section" id="gifts">
-
-  <div class="heading">
-    <small>THE GIFT COLLECTION</small>
-    <h2>เลือกของขวัญที่ใช่</h2>
-    <p>ทุกของขวัญมีเรื่องราว และทุกเรื่องราวมีความหมาย</p>
-  </div>
-
-  <div class="gift-grid">
-
-    <div class="gift-card">
-      <div class="gift-icon">🧩</div>
-      <span class="badge">MEMORY GAME</span>
-      <h3>เกมต่อภาพความทรงจำ</h3>
-      <p>เปลี่ยนภาพถ่ายสุดพิเศษให้กลายเป็นเกมปริศนา เพื่อให้คนที่คุณรักค่อย ๆ เปิดเผยความทรงจำ</p>
-      <button onclick="showGift('🧩','เกมต่อภาพความทรงจำ')">ดูรายละเอียด</button>
-    </div>
-
-    <div class="gift-card">
-      <div class="gift-icon">💌</div>
-      <span class="badge">LOVE LETTER</span>
-      <h3>จดหมายแห่งความรัก</h3>
-      <p>ซ่อนข้อความแทนความรู้สึกไว้ในซองจดหมาย ให้ผู้รับได้เปิดอ่านทีละฉบับ</p>
-      <button onclick="showGift('💌','จดหมายแห่งความรัก')">ดูรายละเอียด</button>
-    </div>
-
-    <div class="gift-card">
-      <div class="gift-icon">💗</div>
-      <span class="badge">MEMORY MATCH</span>
-      <h3>เกมจับคู่ความทรงจำ</h3>
-      <p>ทดสอบความจำด้วยภาพและเรื่องราวที่มีความหมายของคุณทั้งสองคน</p>
-      <button onclick="showGift('💗','เกมจับคู่ความทรงจำ')">ดูรายละเอียด</button>
-    </div>
-
-    <div class="gift-card">
-      <div class="gift-icon">🎁</div>
-      <span class="badge">SURPRISE BOX</span>
-      <h3>กล่องของขวัญเซอร์ไพรส์</h3>
-      <p>มอบประสบการณ์เปิดกล่องของขวัญสุดพิเศษ พร้อมข้อความและภาพที่คุณเลือกเอง</p>
-      <button onclick="showGift('🎁','กล่องของขวัญเซอร์ไพรส์')">ดูรายละเอียด</button>
-    </div>
-
-    <div class="gift-card">
-      <div class="gift-icon">📖</div>
-      <span class="badge">OUR STORY</span>
-      <h3>เรื่องราวของเรา</h3>
-      <p>รวบรวมช่วงเวลาที่น่าจดจำ ให้กลายเป็นหนังสือเรื่องราวความรักฉบับของคุณ</p>
-      <button onclick="showGift('📖','เรื่องราวของเรา')">ดูรายละเอียด</button>
-    </div>
-
-  </div>
+ <div class="heading"><small>คอลเลกชันของขวัญ</small><h2>เลือกเรื่องราวที่อยากมอบให้</h2><p>แต่ละรูปแบบถูกออกแบบมาเพื่อเปลี่ยนความทรงจำธรรมดา ให้กลายเป็นช่วงเวลาที่น่าจดจำ</p></div>
+ <div class="gift-grid">
+  <div class="gift-card"><div class="gift-icon">🧩</div><span class="badge">เกมปริศนา</span><h3>เกมต่อภาพความทรงจำ</h3><p>เปลี่ยนภาพถ่ายสุดพิเศษให้กลายเป็นเกมปริศนา ค่อย ๆ ต่อภาพเพื่อค้นพบความทรงจำ</p><button onclick="showGift('🧩','เกมต่อภาพความทรงจำ')">ดูรายละเอียด</button></div>
+  <div class="gift-card"><div class="gift-icon">💌</div><span class="badge">จดหมายพิเศษ</span><h3>จดหมายแห่งความรัก</h3><p>ซ่อนข้อความแทนความรู้สึกไว้ในซองจดหมาย ให้ผู้รับเปิดอ่านทีละฉบับ</p><button onclick="showGift('💌','จดหมายแห่งความรัก')">ดูรายละเอียด</button></div>
+  <div class="gift-card"><div class="gift-icon">💗</div><span class="badge">เกมจับคู่</span><h3>เกมจับคู่ความทรงจำ</h3><p>ทดสอบความจำด้วยภาพและเรื่องราวที่มีความหมายของคุณทั้งสองคน</p><button onclick="showGift('💗','เกมจับคู่ความทรงจำ')">ดูรายละเอียด</button></div>
+  <div class="gift-card"><div class="gift-icon">🎁</div><span class="badge">เซอร์ไพรส์</span><h3>กล่องของขวัญเซอร์ไพรส์</h3><p>มอบประสบการณ์เปิดกล่องของขวัญ พร้อมข้อความและภาพที่คุณเลือกเอง</p><button onclick="showGift('🎁','กล่องของขวัญเซอร์ไพรส์')">ดูรายละเอียด</button></div>
+  <div class="gift-card"><div class="gift-icon">📖</div><span class="badge">เรื่องราวของเรา</span><h3>หนังสือความทรงจำ</h3><p>รวบรวมช่วงเวลาที่น่าจดจำ ให้กลายเป็นหนังสือเรื่องราวฉบับของคุณ</p><button onclick="showGift('📖','หนังสือความทรงจำ')">ดูรายละเอียด</button></div>
+ </div>
 </section>
-
-<section class="story-section">
-  <div class="story-box">
-    <div class="heart">♡</div>
-    <h2>ของขวัญที่มากกว่าคำว่าให้</h2>
-    <p>
-      เราเชื่อว่าของขวัญที่ดีที่สุด
-      ไม่จำเป็นต้องมีราคาแพงที่สุด
-      แต่คือของขวัญที่ทำให้ใครบางคนรู้ว่า
-      เขามีความหมายกับเรามากแค่ไหน
-    </p>
-    <a href="#gifts" class="btn">เริ่มต้นสร้างความทรงจำ</a>
-  </div>
-</section>
-
+<section class="story-section"><div class="story-box"><div class="heart">♡</div><h2>ของขวัญที่มากกว่าคำว่าให้</h2><p>เราเชื่อว่าของขวัญที่ดีที่สุด ไม่จำเป็นต้องมีราคาแพงที่สุด แต่คือของขวัญที่ทำให้ใครบางคนรู้ว่า เขามีความหมายกับเรามากแค่ไหน</p><a href="#gifts" class="btn">เริ่มต้นสร้างความทรงจำ</a></div></section>
 <section class="how-section" id="how">
-
-  <div class="heading">
-    <small>HOW IT WORKS</small>
-    <h2>สร้างของขวัญง่าย ๆ ใน 4 ขั้นตอน</h2>
-    <p>เปลี่ยนไอเดียของคุณให้กลายเป็นของขวัญที่น่าจดจำ</p>
-  </div>
-
-  <div class="steps">
-
-    <div class="step">
-      <div class="step-number">01</div>
-      <h3>เลือกรูปแบบ</h3>
-      <p>เลือกเกมหรือประสบการณ์ของขวัญที่คุณชื่นชอบ</p>
-    </div>
-
-    <div class="step">
-      <div class="step-number">02</div>
-      <h3>ปรับแต่งของขวัญ</h3>
-      <p>เพิ่มชื่อ รูปภาพ ข้อความ และความทรงจำของคุณ</p>
-    </div>
-
-    <div class="step">
-      <div class="step-number">03</div>
-      <h3>สร้างของขวัญ</h3>
-      <p>จัดเตรียมของขวัญดิจิทัลในรูปแบบเฉพาะของคุณ</p>
-    </div>
-
-    <div class="step">
-      <div class="step-number">04</div>
-      <h3>ส่งมอบความสุข</h3>
-      <p>ส่งลิงก์ส่วนตัวให้คนพิเศษเปิดรับของขวัญ</p>
-    </div>
-
-  </div>
+ <div class="heading"><small>ขั้นตอนง่าย ๆ</small><h2>สร้างของขวัญใน 4 ขั้นตอน</h2><p>คุณเลือกเรื่องราว ส่วนเราช่วยเปลี่ยนให้เป็นของขวัญที่ส่งต่อได้</p></div>
+ <div class="steps">
+  <div class="step"><div class="step-number">01</div><h3>เลือกรูปแบบ</h3><p>เลือกเกมหรือประสบการณ์ของขวัญที่คุณชื่นชอบ</p></div>
+  <div class="step"><div class="step-number">02</div><h3>ปรับแต่งของขวัญ</h3><p>เพิ่มชื่อ รูปภาพ ข้อความ และความทรงจำของคุณ</p></div>
+  <div class="step"><div class="step-number">03</div><h3>ตรวจดูตัวอย่าง</h3><p>ดูของขวัญก่อนส่ง และปรับแก้ได้ตามต้องการ</p></div>
+  <div class="step"><div class="step-number">04</div><h3>ส่งมอบความสุข</h3><p>ส่งลิงก์ส่วนตัวให้คนพิเศษเปิดรับของขวัญ</p></div>
+ </div>
 </section>
-
-<section class="promise">
-  <h2>ทุกความทรงจำ...ควรค่าแก่การเก็บรักษา</h2>
-  <p>
-    LoveStory Studio<br>
-    พื้นที่เล็ก ๆ สำหรับสร้างความทรงจำที่ยิ่งใหญ่ ♡
-  </p>
-</section>
-
+<section class="promise"><h2>ทุกความทรงจำ...ควรค่าแก่การเก็บรักษา</h2><p>LoveStory Studio<br>พื้นที่เล็ก ๆ สำหรับสร้างความทรงจำที่ยิ่งใหญ่ ♡</p></section>
 </main>
-
-<footer>
-  <div class="footer-logo">LoveStory Studio</div>
-  <p>สร้างขึ้นด้วยความรัก เพื่อส่งต่อความรู้สึกดี ๆ</p>
-  <p class="copyright">© 2026 LoveStory Studio. All rights reserved.</p>
-</footer>
-
-<div id="modal">
-  <div class="modal-box">
-    <div class="modal-icon" id="modalIcon">💗</div>
-    <h3 id="modalTitle">ของขวัญของเรา</h3>
-    <p id="modalText">
-      เรากำลังเตรียมประสบการณ์สุดพิเศษสำหรับคุณ
-    </p>
-    <button class="btn" onclick="closeGift()">กลับสู่หน้าหลัก</button>
-  </div>
-</div>
-
+<footer><div class="footer-logo">LoveStory Studio</div><p>สร้างขึ้นด้วยความรัก เพื่อส่งต่อความรู้สึกดี ๆ</p><p class="copyright">© 2026 LoveStory Studio. สงวนลิขสิทธิ์</p></footer>
+<div id="modal"><div class="modal-box"><div class="modal-icon" id="modalIcon">💗</div><h3 id="modalTitle">ของขวัญของเรา</h3><p id="modalText">เรากำลังเตรียมประสบการณ์สุดพิเศษสำหรับคุณ</p><button class="btn" onclick="closeGift()">กลับสู่หน้าหลัก</button></div></div>
 <script>
-function toggleMenu(){
-  document.getElementById('nav').classList.toggle('active');
-}
-
-document.querySelectorAll('#nav a').forEach(function(link){
-  link.addEventListener('click',function(){
-    document.getElementById('nav').classList.remove('active');
-  });
-});
-
+function toggleMenu(){document.getElementById('nav').classList.toggle('active')}
+document.querySelectorAll('#nav a').forEach(function(link){link.addEventListener('click',function(){document.getElementById('nav').classList.remove('active')})})
 function showGift(icon,name){
-  document.getElementById('modalIcon').textContent=icon;
-  document.getElementById('modalTitle').textContent=name;
-  document.getElementById('modalText').textContent=
-    'เรากำลังพัฒนาประสบการณ์ '+name+
-    ' ให้คุณสามารถสร้างและปรับแต่งของขวัญได้ด้วยตัวเอง รอติดตามการเปิดตัวเร็ว ๆ นี้นะคะ ♡';
-  document.getElementById('modal').style.display='flex';
+ document.getElementById('modalIcon').textContent=icon;
+ document.getElementById('modalTitle').textContent=name;
+ document.getElementById('modalText').textContent='รูปแบบนี้จะให้คุณเพิ่มรูปภาพ ชื่อ และข้อความส่วนตัวได้ เราจะพัฒนาหน้าสร้างของขวัญให้ใช้งานได้ในขั้นตอนถัดไป ♡';
+ document.getElementById('modal').style.display='flex';
 }
-
-function closeGift(){
-  document.getElementById('modal').style.display='none';
-}
-
-document.getElementById('modal').addEventListener('click',function(e){
-  if(e.target===this) closeGift();
-});
+function closeGift(){document.getElementById('modal').style.display='none'}
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeGift()})
 </script>
-
 </body>
 </html>
